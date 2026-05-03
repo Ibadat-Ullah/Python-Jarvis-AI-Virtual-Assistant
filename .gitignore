@@ -1,0 +1,51 @@
+﻿# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.db
+
+# ---- Virtual Environments ----
+venv/
+env/
+.venv/
+ENV/
+
+# ---- Environment / Secrets ----
+.env
+*.env
+.env.*
+!example.env
+
+# ---- OS / Editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Logs ----
+*.log
+
+# ---- Cache ----
+.cache/
+dist/
+build/
+*.egg-info/
+
+# ---- Audio / Temp Files (Jarvis AI specific) ----
+*.wav
+*.mp3
+*.ogg
+temp/
+recordings/
+output_audio/
+
+# ---- Models ----
+models/
+*.bin
+*.onnx
+
+# ---- Misc ----
+*.json
+*.lock
