@@ -12,7 +12,6 @@ from groq import Groq
 import tempfile
 import soundLibrary
 
-# ΓöÇΓöÇ API Keys ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
 NEWS_API_KEY = os.getenv("NEWS_API_KEY", "").strip()
 
@@ -26,7 +25,7 @@ def setup_microphone():
         for i, d in enumerate(devices):
             if d.get("max_input_channels", 0) > 0:
                 sd.default.device = (i, None)
-                print(f"≡ƒÄñ Mic selected: {d['name']}")
+                print(f"Mic selected: {d['name']}")
                 return
     except Exception as e:
         print("Mic setup error:", e)
@@ -53,7 +52,7 @@ def speak(text):
 
 def listen():
     try:
-        print("≡ƒÄñ Listening...")
+        print("Listening...")
 
         fs = 44100
         duration = 5
@@ -100,13 +99,13 @@ def ai_process(command):
         return response.choices[0].message.content
 
     except Exception as e:
-        print("≡ƒöÑ GROQ ERROR:", repr(e))
+        print("GROQ ERROR:", repr(e))
         return "AI is currently unavailable"
 
 
 def process_command(c):
     c = c.lower()
-    print("≡ƒô⌐ Command:", c)
+    print("Command:", c)
 
     if "youtube" in c:
         speak("Opening YouTube")
